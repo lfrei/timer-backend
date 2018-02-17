@@ -35,8 +35,8 @@ public class TimerController {
     @CrossOrigin
     @PostMapping("/worklog")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addWorklog(@RequestBody() Worklog worklog) {
-        repository.save(worklog);
+    public long addWorklog(@RequestBody() Worklog worklog) {
+        return repository.save(worklog).getId();
     }
 }
 

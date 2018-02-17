@@ -37,6 +37,10 @@ public class Worklog {
         return new Worklog(user, project, day, time);
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getUser() {
         return user;
     }
