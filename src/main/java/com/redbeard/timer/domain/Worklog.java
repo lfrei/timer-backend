@@ -8,7 +8,7 @@ public class Worklog {
     private static final long serialVersionUID = -3009157732242241606L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     @Column(name = "username")
