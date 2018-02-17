@@ -32,6 +32,7 @@ public class TimerController {
         return repository.findByUser(user);
     }
 
+    @CrossOrigin
     @PostMapping("/worklog")
     @ResponseStatus(HttpStatus.CREATED)
     public void addWorklog(@RequestBody() Worklog worklog) {
