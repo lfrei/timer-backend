@@ -11,7 +11,7 @@ public class Worklog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user")
+    @Column(name = "username")
     private String user;
 
     @Column(name = "project")
