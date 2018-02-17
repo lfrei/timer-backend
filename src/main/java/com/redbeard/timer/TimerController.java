@@ -1,6 +1,6 @@
 package com.redbeard.timer;
 
-import com.redbeard.timer.domain.Workday;
+import com.redbeard.timer.domain.Worklog;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,20 +9,20 @@ import java.util.List;
 @RestController
 public class TimerController {
 
-    @GetMapping("/workdays")
-    public List<Workday> getWorkdays() {
-        return WorkdayRepository.findAll();
+    @GetMapping("/worklogs")
+    public List<Worklog> getWorklogs() {
+        return WorklogRepository.findAll();
     }
 
-    @GetMapping("/workdays/{user}")
-    public List<Workday> getWorkdaysByUser(@PathVariable("user") String user) {
-        return WorkdayRepository.findByUser(user);
+    @GetMapping("/worklogs/{user}")
+    public List<Worklog> getWorklogsByUser(@PathVariable("user") String user) {
+        return WorklogRepository.findByUser(user);
     }
 
-    @PostMapping("/workday")
+    @PostMapping("/worklog")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addWorkday(@RequestBody() Workday workday) {
-        WorkdayRepository.create(workday);
+    public void addWorklog(@RequestBody() Worklog worklog) {
+        WorklogRepository.create(worklog);
     }
 }
 
