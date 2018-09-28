@@ -36,7 +36,7 @@ public class TimerController {
     @PostMapping("/worklog")
     @ResponseStatus(HttpStatus.CREATED)
     public long addWorklog(@RequestBody() Worklog worklog) {
-        return repository.save(worklog).getId();
+        return repository.save(worklog.createWorklogWithCurrentDay()).getId();
     }
 }
 

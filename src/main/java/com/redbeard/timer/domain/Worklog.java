@@ -1,6 +1,7 @@
 package com.redbeard.timer.domain;
 
 import javax.persistence.*;
+import java.util.Calendar;
 
 @Entity
 @Table(name = "worklog")
@@ -55,6 +56,14 @@ public class Worklog {
 
     public int getTime() {
         return time;
+    }
+
+    public Worklog createWorklogWithCurrentDay() {
+        return new Worklog(user, project, getCurrentJulianDate(), time);
+    }
+
+    private int getCurrentJulianDate() {
+        return Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
     }
 
     @Override
