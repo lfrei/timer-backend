@@ -20,6 +20,7 @@ public class TimerController {
         this.repository = repository;
     }
 
+    @CrossOrigin
     @GetMapping("/worklogs")
     public List<Worklog> getWorklogs() {
         return StreamSupport
@@ -27,6 +28,7 @@ public class TimerController {
                 .collect(toList());
     }
 
+    @CrossOrigin
     @GetMapping("/worklogs/{user}")
     public List<Worklog> getWorklogsByUser(@PathVariable("user") String user) {
         return repository.findByUser(user);
